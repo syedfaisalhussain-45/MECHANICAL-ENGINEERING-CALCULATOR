@@ -1,0 +1,330 @@
+import math
+
+# 1. MECHANICS
+
+def force():
+    m = float(input("Enter Mass (kg): "))
+    a = float(input("Enter Acceleration (m/s^2): "))
+    print("Force =", m * a, "N")
+
+
+def work():
+    f = float(input("Enter Force (N): "))
+    d = float(input("Enter Displacement (m): "))
+    print("Work =", f * d, "J")
+
+
+def power():
+    w = float(input("Enter Work Done (J): "))
+    t = float(input("Enter Time (s): "))
+    print("Power =", w / t, "W")
+
+
+def kinetic_energy():
+    m = float(input("Enter Mass (kg): "))
+    v = float(input("Enter Velocity (m/s): "))
+    print("Kinetic Energy =", 0.5 * m * v * v, "J")
+
+
+def mechanics():
+    while True:
+        print("\n--- MECHANICS ---")
+        print("1. Force")
+        print("2. Work")
+        print("3. Power")
+        print("4. Kinetic Energy")
+        print("5. Back")
+
+        ch = input("Enter choice: ")
+
+        if ch == "1":
+            force()
+        elif ch == "2":
+            work()
+        elif ch == "3":
+            power()
+        elif ch == "4":
+            kinetic_energy()
+        elif ch == "5":
+            break
+        else:
+            print("Invalid choice")
+
+
+# 2. STRENGTH OF MATERIALS
+
+def stress():
+    f = float(input("Enter Force (N): "))
+    a = float(input("Enter Area (m^2): "))
+    print("Stress =", f / a, "Pa")
+
+
+def strain():
+    dl = float(input("Enter Change in Length (m): "))
+    l = float(input("Enter Original Length (m): "))
+    print("Strain =", dl / l)
+
+
+def youngs_modulus():
+    s = float(input("Enter Stress (Pa): "))
+    e = float(input("Enter Strain: "))
+    print("Young's Modulus =", s / e, "Pa")
+
+
+def strength_of_materials():
+    while True:
+        print("\n--- STRENGTH OF MATERIALS ---")
+        print("1. Stress")
+        print("2. Strain")
+        print("3. Young's Modulus")
+        print("4. Back")
+
+        ch = input("Enter choice: ")
+
+        if ch == "1":
+            stress()
+        elif ch == "2":
+            strain()
+        elif ch == "3":
+            youngs_modulus()
+        elif ch == "4":
+            break
+        else:
+            print("Invalid choice")
+
+
+# 3. THERMODYNAMICS
+
+def heat_transfer():
+    m = float(input("Enter Mass (kg): "))
+    c = float(input("Enter Specific Heat (J/kg C): "))
+    dt = float(input("Enter Temperature Change (C): "))
+    print("Heat Transfer =", m * c * dt, "J")
+
+
+def thermo_work():
+    p = float(input("Enter Pressure (Pa): "))
+    dv = float(input("Enter Change in Volume (m^3): "))
+    print("Work Done =", p * dv, "J")
+
+
+def thermal_efficiency():
+    w = float(input("Enter Work Output (J): "))
+    q = float(input("Enter Heat Input (J): "))
+    print("Thermal Efficiency =", (w / q) * 100, "%")
+
+
+def thermodynamics():
+    while True:
+        print("\n--- THERMODYNAMICS ---")
+        print("1. Heat Transfer")
+        print("2. Work Done")
+        print("3. Thermal Efficiency")
+        print("4. Back")
+
+        ch = input("Enter choice: ")
+
+        if ch == "1":
+            heat_transfer()
+        elif ch == "2":
+            thermo_work()
+        elif ch == "3":
+            thermal_efficiency()
+        elif ch == "4":
+            break
+        else:
+            print("Invalid choice")
+
+
+# 4. FLUID MECHANICS
+
+def pressure():
+    f = float(input("Enter Force (N): "))
+    a = float(input("Enter Area (m^2): "))
+    print("Pressure =", f / a, "Pa")
+
+
+def reynolds_number():
+    rho = float(input("Enter Density (kg/m^3): "))
+    v = float(input("Enter Velocity (m/s): "))
+    d = float(input("Enter Pipe Diameter (m): "))
+    mu = float(input("Enter Dynamic Viscosity (Pa.s): "))
+
+    re = (rho * v * d) / mu
+    print("Reynolds Number =", re)
+
+
+def flow_velocity():
+    q = float(input("Enter Discharge (m^3/s): "))
+    a = float(input("Enter Area (m^2): "))
+    print("Flow Velocity =", q / a, "m/s")
+
+
+def discharge():
+    a = float(input("Enter Area (m^2): "))
+    v = float(input("Enter Flow Velocity (m/s): "))
+    print("Discharge =", a * v, "m^3/s")
+
+
+def fluid_mechanics():
+    while True:
+        print("\n--- FLUID MECHANICS ---")
+        print("1. Pressure")
+        print("2. Reynolds Number")
+        print("3. Flow Velocity")
+        print("4. Discharge")
+        print("5. Back")
+
+        ch = input("Enter choice: ")
+
+        if ch == "1":
+            pressure()
+        elif ch == "2":
+            reynolds_number()
+        elif ch == "3":
+            flow_velocity()
+        elif ch == "4":
+            discharge()
+        elif ch == "5":
+            break
+        else:
+            print("Invalid choice")
+
+
+# 5. THERMAL ENGINEERING
+
+def heat_conduction():
+    k = float(input("Enter Thermal Conductivity (W/m K): "))
+    a = float(input("Enter Area (m^2): "))
+    dt = float(input("Enter Temperature Difference (K): "))
+    x = float(input("Enter Thickness (m): "))
+
+    q = (k * a * dt) / x
+    print("Heat Conduction =", q, "W")
+
+
+def cop():
+    q = float(input("Enter Refrigeration Effect (J): "))
+    w = float(input("Enter Work Input (J): "))
+
+    print("COP =", q / w)
+
+
+def heat_engine_efficiency():
+    qh = float(input("Enter Heat Supplied (J): "))
+    qc = float(input("Enter Heat Rejected (J): "))
+
+    efficiency = ((qh - qc) / qh) * 100
+    print("Heat Engine Efficiency =", efficiency, "%")
+
+
+def thermal_engineering():
+    while True:
+        print("\n--- THERMAL ENGINEERING ---")
+        print("1. Heat Conduction")
+        print("2. COP")
+        print("3. Heat Engine Efficiency")
+        print("4. Back")
+
+        ch = input("Enter choice: ")
+
+        if ch == "1":
+            heat_conduction()
+        elif ch == "2":
+            cop()
+        elif ch == "3":
+            heat_engine_efficiency()
+        elif ch == "4":
+            break
+        else:
+            print("Invalid choice")
+
+
+# 6. MACHINE DESIGN
+
+def torque():
+    p = float(input("Enter Power (W): "))
+    n = float(input("Enter Speed (RPM): "))
+
+    omega = (2 * math.pi * n) / 60
+    t = p / omega
+
+    streamliprint("Torque =", t, "N.m")
+
+
+def shaft_power():
+    t = float(input("Enter Torque (N.m): "))
+    n = float(input("Enter Speed (RPM): "))
+
+    omega = (2 * math.pi * n) / 60
+    p = t * omega
+
+    print("Shaft Power =", p, "W")
+
+
+def shaft_diameter():
+    t = float(input("Enter Torque (N.m): "))
+    tau = float(input("Enter Shear Stress (Pa): "))
+
+    d = ((16 * t) / (math.pi * tau)) ** (1 / 3)
+
+    print("Shaft Diameter =", d, "m")
+
+
+def machine_design():
+    while True:
+        print("\n--- MACHINE DESIGN ---")
+        print("1. Torque")
+        print("2. Shaft Power")
+        print("3. Shaft Diameter")
+        print("4. Back")
+
+        ch = input("Enter choice: ")
+
+        if ch == "1":
+            torque()
+        elif ch == "2":
+            shaft_power()
+        elif ch == "3":
+            shaft_diameter()
+        elif ch == "4":
+            break
+        else:
+            print("Invalid choice")
+
+
+# MAIN PROGRAM
+
+def main():
+    while True:
+        print("\nMECHANICAL ENGINEERING CALCULATOR")
+        print("1. Mechanics")
+        print("2. Strength of Materials")
+        print("3. Thermodynamics")
+        print("4. Fluid Mechanics")
+        print("5. Thermal Engineering")
+        print("6. Machine Design")
+        print("7. Exit")
+
+        ch = input("Enter your choice: ")
+
+        if ch == "1":
+            mechanics()
+        elif ch == "2":
+            strength_of_materials()
+        elif ch == "3":
+            thermodynamics()
+        elif ch == "4":
+            fluid_mechanics()
+        elif ch == "5":
+            thermal_engineering()
+        elif ch == "6":
+            machine_design()
+        elif ch == "7":
+            print("bye bye kalb!")
+            break
+        else:
+            print("Invalid choice")
+
+
+main()
